@@ -15,10 +15,10 @@
     <title>Platzi</title>
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#navbar" data-offset="57">
 <!-- header -->
   <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <img id="header-img" src="assets/imagenes/platzi-logo.png">
@@ -27,22 +27,22 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <div class="collapse navbar-collapse" id="navbar">
                     <ul class="navbar-nav ml-auto px-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">La conferencia <span class="sr-only">(current)</span></a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#carousel">La conferencia <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Oradores</a>
+                            <a class="nav-link" href="#oradores">Oradores</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Lugar y fecha</a>
+                            <a class="nav-link" href="#fecha">Lugar y fecha</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Convierte en orador</a>
+                            <a class="nav-link" href="#formulario">Convierte en orador</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-platzi" href="#">Comprar tikets</a>
+                            <a data-toggle="modal" data-target="#comprar" class="nav-link text-platzi"  href="#">Comprar tikets</a>
                         </li>
                     </ul>
                 </div>
@@ -89,7 +89,7 @@
                             Ven a conocerlos te esperamos!
                         </p>
                         <a href="#" class="btn btn-outline-light">Quiero ser orador</a>
-                        <button class="btn btn-success" >Comprar ticket</button>
+                        <button data-toggle="modal" data-target="#comprar" class="btn btn-success" >Comprar ticket</button>
                     </div>
                 </div>
             </div>
@@ -232,7 +232,7 @@
             <div class="col text-center pt-4">
                 <small >Convierte en un</small>
                 <h2>Orador</h2>
-                <p>Anotate como orador para darnos una charla ignite. Cuéntanos de que quieres hablar</p>
+                <p>Anotate como orador para darnos una  <abbr data-toggle="tooltip" title="Charlas de 5 minutos"> charla ignite.</abbr>  Cuéntanos de que quieres hablar</p>
             </div>
         </div>
         <div class="row mx-3">
@@ -288,6 +288,48 @@
         </div>
     </div>
   </footer>
+
+  <!-- modal -->
+    <div class="modal fade" id="comprar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tickets</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="#">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control " placeholder="Nombre">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Correo">
+                            </div>
+                            <br>
+                            <div class="col-md-12 my-2">
+                                <input type="number" class="form-control" placeholder="Seleccione el numero de tickets que desa comprar">
+                            </div>
+                            <div>
+                                 <input type="checkbox" class=""> Acepta los terminos y condiciones del boleto
+                            </div>
+                        </div>
+                        <br>
+                    </form>
+                    <div class=" alert alert-success ">
+                        Se le enviara un correo para confirmas la compra
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Comprar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  <!-- /modal -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
