@@ -3,6 +3,38 @@
     height:  auto;
 }
 
+.carusel img {
+    max-height: 70vh;
+    object-fit: cover;
+}
+
+#carousel .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0,0.5);
+    color: antiquewhite;
+
+}
+
+#carousel .overlay .container,
+#carousel .overlay .row
+ {
+     height: 100%;
+ }
+
 .text-platzi {
     color: #97c93e !important;
+}
+
+footer {
+    padding: 20px 2px;
+    background-color: rgb(28, 54, 67);
+    color: white;
+}
+
+footer a {
+    color: white;
 }
