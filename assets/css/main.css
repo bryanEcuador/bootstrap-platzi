@@ -38,3 +38,12 @@ footer {
 footer a {
     color: white;
 }
+
+#fecha img {
+    max-width: 100%;
+}
+
+#fecha {
+    background-color: #212529;
+    color: white;
+}
